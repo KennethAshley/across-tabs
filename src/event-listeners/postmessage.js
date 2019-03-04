@@ -122,7 +122,11 @@ PostMessageListener._onBeforeUnload = (data) => {
   }
 
   // CustomEvent is not supported in IE, but polyfill will take care of it
-  let event = new CustomEvent('onChildUnload', {'detail': tabInfo});
+  let event = new CustomEvent('onChildUnload', {
+    'detail': Object.assign({
+      name: window.newlyTabOpened.name
+    }, tabInfo)
+  });
 
   window.dispatchEvent(event);
 };
