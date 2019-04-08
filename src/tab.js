@@ -32,7 +32,8 @@ class Tab {
     window.newlyTabOpened = {
       id: this.id,
       name: this.name || this.windowName,
-      ref: this.ref
+      ref: this.ref,
+      data: this.data
     };
 
     // Push it to the list of tabs

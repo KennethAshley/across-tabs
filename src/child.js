@@ -98,6 +98,7 @@ class Child {
       this.tabId = actualData && actualData.id;
       this.tabName = actualData && actualData.name;
       this.tabParentName = actualData && actualData.parentName;
+      this.data = actualData && actualData.data;
     } catch (e) {
       throw new Error(WarningTextEnum.INVALID_DATA);
     };
@@ -154,6 +155,7 @@ class Child {
 
       msg = {
         id: this.tabId,
+        name: this.tabName,
         isSiteInsideFrame: this.config.isSiteInsideFrame
       };
       this.sendMessageToParent(msg, PostMessageEventNamesEnum.HANDSHAKE);

@@ -62,7 +62,8 @@ PostMessageListener._onLoad = (data) => {
       dataToSend += JSON.stringify({
         id: window.newlyTabOpened.id,
         name: window.newlyTabOpened.name,
-        parentName: window.name
+        parentName: window.name,
+        data: window.newlyTabOpened.data
       });
       tabUtils.sendMessage(window.newlyTabOpened, dataToSend, tabInfo.isSiteInsideFrame);
     } catch (e) {
